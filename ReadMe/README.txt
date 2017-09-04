@@ -73,7 +73,8 @@ Java 8 introduces a new date-time API under the package java.time. Important cla
 -Zoned - Deals with various time zones.
 
 
+10)ENUMERATION
 
-
+Enum in java is a data type that contains fixed set of constants.
 
 
