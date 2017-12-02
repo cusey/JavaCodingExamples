@@ -1,4 +1,4 @@
-package org.cusey.Lamdba;
+package org.cusey.Lambda;
 
 import java.util.ArrayList;
 import java.util.List;

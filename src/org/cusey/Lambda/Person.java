@@ -1,4 +1,4 @@
-package org.cusey.Lamdba;
+package org.cusey.Lambda;
 
 public class Person {
 	
