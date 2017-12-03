@@ -12,7 +12,7 @@ public class MainThread<E> {
 
             boolean absent = !list.contains(x);
             if(absent){
-                System.out.println("Element " + x + " does not exist in list so added.");
+                System.out.println("Element " + x + " does not exist in list so added it to the list.");
                 list.add(x);
             }
             return absent;
@@ -22,26 +22,38 @@ public class MainThread<E> {
 
     public static void main(String[] args) {
 
-        final MainThread<String> concurrect = new MainThread<>();
+        final MainThread<String> thread = new MainThread<>();
 
         Thread threadOne  = new Thread( new Runnable(){
             @Override
-            public void run() {concurrect.outIfAbsent("JOHN");}
+            public void run() {thread.outIfAbsent("JOHN");}
         });
 
         Thread threadTwo = new Thread( new Runnable(){
             @Override
-            public void run() {concurrect.outIfAbsent("JOHN");}
+            public void run() {thread.outIfAbsent("JOHN");}
         });
 
         Thread threadThree = new Thread( new Runnable(){
             @Override
-            public void run() {concurrect.outIfAbsent("JOHN");}
+            public void run() {thread.outIfAbsent("JOHN");}
+        });
+
+        Thread threadFour = new Thread( new Runnable(){
+            @Override
+            public void run() {thread.outIfAbsent("TOM");}
+        });
+
+        Thread threadFive = new Thread( new Runnable(){
+            @Override
+            public void run() {thread.outIfAbsent("TOM");}
         });
 
         threadOne.start();
         threadTwo.start();
         threadThree.start();
+        threadFour.start();
+        threadFive.start();
 
     }
 }
